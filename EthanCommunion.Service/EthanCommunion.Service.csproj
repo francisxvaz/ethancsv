@@ -77,7 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -90,6 +92,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="App_Data\guests.csv" />
+    <None Include="Properties\PublishProfiles\Folder.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
