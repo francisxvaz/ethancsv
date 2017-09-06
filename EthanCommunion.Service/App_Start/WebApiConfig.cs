@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.Linq;
+using System.Net.Http.Headers;
+using System.Web.Http;
 
 namespace EthanCommunion.Service
 {
@@ -7,6 +9,8 @@ namespace EthanCommunion.Service
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
+            config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
